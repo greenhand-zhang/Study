@@ -1,8 +1,7 @@
 package com.greenhand.classstudy;
 
-import jdk.nashorn.internal.objects.annotations.Getter;
-
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Employee {
 
@@ -11,7 +10,7 @@ public class Employee {
     private LocalDate hireday;
 
     public Employee(String name, double salary, int year, int month, int day){
-        this.name = name;
+        this.name = Objects.requireNonNull(name);
         this.salary = salary;
         this.hireday = LocalDate.of(year, month, day);
     }
