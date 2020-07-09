@@ -3,11 +3,12 @@ package com.greenhand.classstudy;
 import java.time.LocalDate;
 import java.util.Objects;
 
+//public final class Employee :: can not extend
 public class Employee {
 
     private String name;
     private double salary;
-    private LocalDate hireday;
+    protected LocalDate hireday;
 
     public Employee(String name, double salary, int year, int month, int day){
         this.name = Objects.requireNonNull(name);
@@ -15,7 +16,8 @@ public class Employee {
         this.hireday = LocalDate.of(year, month, day);
     }
 
-    public String getName() {
+    //can not extend
+    public final String getName() {
         return name;
     }
 
